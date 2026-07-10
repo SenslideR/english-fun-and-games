@@ -3,6 +3,8 @@
 Интерактивное приложение для изучения английского на основе раздела учебника
 **Unit 3 «Fun and games»**: карточки для запоминания слов и интерактивные упражнения.
 
+**🌐 Публичный адрес:** https://senslider.github.io/english-fun-and-games/
+
 ## Возможности
 
 - 📚 **Карточки (flashcards)** — словарь, фразовые глаголы и предложные сочетания.
@@ -41,6 +43,23 @@ npm run preview
 Типы упражнений:
 - `kind: 'choice'` — выбор из вариантов (`options`), например multiple choice;
 - `kind: 'input'` — ввод слова (`answers` — список принимаемых ответов).
+
+## Деплой (GitHub Pages)
+
+Сайт опубликован на GitHub Pages из ветки `gh-pages`. Чтобы обновить после изменений:
+
+```bash
+# 1. собрать с относительными путями
+MSYS_NO_PATHCONV=1 npx vite build --base=./
+
+# 2. выложить содержимое dist/ в ветку gh-pages
+cd dist && touch .nojekyll && git init -b gh-pages
+git add -A && git commit -m "Deploy"
+git remote add origin https://github.com/SenslideR/english-fun-and-games.git
+git push -f origin gh-pages
+```
+
+Изменения появляются на публичном адресе через ~1 минуту.
 
 ## Стек
 
